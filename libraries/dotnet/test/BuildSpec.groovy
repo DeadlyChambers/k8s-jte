@@ -1,22 +1,22 @@
-import org.junit.*
-import spock.lang.*
-import com.homeaway.devtools.jenkins.testing.JenkinsPipelineSpecification
+// import org.junit.*
+// import spock.lang.*
+// import com.homeaway.devtools.jenkins.testing.JenkinsPipelineSpecification
 
-public class BuildSpec extends JenkinsPipelineSpecification{
+// public class BuildSpec extends JenkinsPipelineSpecification{
 
-  def build 
+//   def build 
 
-  def setup() {
-    build = loadPipelineScriptForTest("dotnet/steps/dotnet_invoke.groovy")
-  }
+//   def setup() {
+//     build = loadPipelineScriptForTest("dotnet/steps/dotnet_invoke.groovy")
+//   }
 
-  def "Build step prints message" () {
-    setup:
-      build.getBinding().setVariable("config", [:])
-    when:
-      build()
-    then:
-      1 * getPipelineMock("sh")("echo 'build step from maven'")
-  }
+//   def "Build step prints message" () {
+//     setup:
+//       build.getBinding().setVariable("config", [:])
+//     when:
+//       build()
+//     then:
+//       1 * getPipelineMock("sh")("echo 'build step from maven'")
+//   }
 
-}
+// }
