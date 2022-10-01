@@ -58,6 +58,16 @@ Which will:
 The configuration for Release Drafter exists in the `.github/release-drafter.yml` file and uses GitHub Actions. 
 
 
+## Adding [Make Docs](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker)
+
+```shell
+docker pull squidfunk/mkdocs-material
+docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material new .
+
+docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
+```
+
 ## Example of Library
 
 [Check it out](https://github.com/ExpediaGroup/jenkins-spock/tree/master/examples/shared-library)
+

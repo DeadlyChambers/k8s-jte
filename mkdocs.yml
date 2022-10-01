@@ -1,7 +1,12 @@
-site_name: JTE Library Starter
+site_name: JTE for All
 
 theme:
   name: material
+  highlightjs: true
+  hljs_styles: Felipec
+  hljs_languages:
+    - groovy
+    - java
   palette:
     primary: teal
   features: 
@@ -10,7 +15,7 @@ theme:
     - navigation.sections
     - navigation.indexes
 
-repo_url: https://github.com/steven-terrana/jte-library-scaffold
+repo_url: https://https://github.com/DeadlyChambers/k8s-jte
 
 watch:
 - libraries
@@ -21,10 +26,10 @@ plugins:
       scripts:
         - /docs/resources/copy_docs.py
 
-extra:
-  version:
-    provider: mike
-    default: latest
+# extra:
+#   version:
+#     provider: mike
+#     default: latest
 
 markdown_extensions:
   - admonition

@@ -1,4 +1,4 @@
-image := "mkdocs-local"
+image := "squidfunk/mkdocs-material"
 
 # Print recipes
 help:
@@ -66,15 +66,15 @@ release version:
   -v $(pwd):/docs \
   -v ~/.gitconfig:/root/.gitconfig \
   -v ~/.git-credentials:/root/.git-credentials \
-  --entrypoint mike \
+  --entrypoint mkdocs \
   {{image}} deploy --push --update-aliases {{version}} latest
 
-  docker run --rm \
-  -v $(pwd):/docs \
-  -v ~/.gitconfig:/root/.gitconfig \
-  -v ~/.git-credentials:/root/.git-credentials \
-  --entrypoint mike \
-  {{image}} set-default -p latest
+#   docker run --rm \
+#   -v $(pwd):/docs \
+#   -v ~/.gitconfig:/root/.gitconfig \
+#   -v ~/.git-credentials:/root/.git-credentials \
+#   --entrypoint mkdocs \
+#   {{image}} set-default -p latest
 
   # go back to main 
   git checkout main
@@ -87,5 +87,5 @@ delete-release version:
   -v $(pwd):/docs \
   -v ~/.gitconfig:/root/.gitconfig \
   -v ~/.git-credentials:/root/.git-credentials \
-  --entrypoint mike \
+  --entrypoint mkdocs \
   {{image}} delete -p -f {{version}}
