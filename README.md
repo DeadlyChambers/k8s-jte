@@ -66,3 +66,8 @@ docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material new .
 
 docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
 ```
+
+## Example of Library
+
+[Check it out](https://github.com/ExpediaGroup/jenkins-spock/tree/master/examples/shared-library)
+
