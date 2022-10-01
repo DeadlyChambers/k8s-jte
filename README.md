@@ -56,3 +56,13 @@ Which will:
 [Release Drafter](https://github.com/release-drafter/release-drafter) is used to automate release note updates as Pull Requests are opened to `main`. 
 
 The configuration for Release Drafter exists in the `.github/release-drafter.yml` file and uses GitHub Actions. 
+
+
+## Adding [Make Docs](https://squidfunk.github.io/mkdocs-material/getting-started/#with-docker)
+
+```shell
+docker pull squidfunk/mkdocs-material
+docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material new .
+
+docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
+```
