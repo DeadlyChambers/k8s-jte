@@ -7,7 +7,7 @@ plugins{
 
 // packaging info
 jenkinsPlugin{
-  jenkinsVersion = "2.346.2"
+  jenkinsVersion = "2.5.2"
   shortName = "jte-library-scaffold"
   // will be the value in the drop down in Jenkins UI
   displayName = "JTE Library Scaffold"
