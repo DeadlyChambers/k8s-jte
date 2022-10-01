@@ -28,7 +28,7 @@ repositories {
 }
 
 group = 'org.jenkins-ci.plugins'
-version = '2.5.2'
+version = '2.272'
 description = 'Allows users to create tool-agnostic, templated pipelines to be shared by multiple teams'
 
 // an artifact required by how Jenkins Spock is hard-coded
