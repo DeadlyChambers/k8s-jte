@@ -56,3 +56,8 @@ Which will:
 [Release Drafter](https://github.com/release-drafter/release-drafter) is used to automate release note updates as Pull Requests are opened to `main`. 
 
 The configuration for Release Drafter exists in the `.github/release-drafter.yml` file and uses GitHub Actions. 
+
+
+## Example of Library
+
+[Check it out](https://github.com/ExpediaGroup/jenkins-spock/tree/master/examples/shared-library)
