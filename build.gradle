@@ -9,14 +9,11 @@ plugins {
 
 // packaging info
 jenkinsPlugin{
-  jenkinsVersion = "2.5.2"
+version = '2.272'
   shortName = "jte-library-scaffold"
   // will be the value in the drop down in Jenkins UI
   displayName = "JTE Library Scaffold"
-   disabledTestInjection = false
-    localizerOutputDir = "${project.buildDir}/generated-src/localizer"
-    configureRepositories = false
-    configurePublishing = true
+ 
 }
 
 repositories {
@@ -27,8 +24,8 @@ repositories {
 
 }
 
-group = 'org.jenkins-ci.plugins'
 version = '2.272'
+group = 'org.jenkins-ci.plugins'
 description = 'Allows users to create tool-agnostic, templated pipelines to be shared by multiple teams'
 
 // an artifact required by how Jenkins Spock is hard-coded
