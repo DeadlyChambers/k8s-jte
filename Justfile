@@ -76,8 +76,8 @@ release version:
 #   --entrypoint mkdocs \
 #   {{image}} set-default -p latest
 
-  # go back to main 
-  git checkout main
+# go back to main 
+#  git checkout main
 
 delete-release version: 
   git push origin --delete release/{{version}}
