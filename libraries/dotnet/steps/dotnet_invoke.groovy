@@ -1,4 +1,6 @@
-/* groovylint-disable NglParseError */
+
+/* groovylint-disable LineLength, NglParseError */
+
 @StepAlias(["source_build", "unit_test", "prepare_tools", "deploy_dotnet"])
 void call() { //(Map args = [:],body){
 
@@ -6,9 +8,11 @@ void call() { //(Map args = [:],body){
     String stepName = ""
     String appName = config?.appName ?: "threes"
     String masterBranch = config?.master_branch ?: "main"
- String outDir = config?.source_build?.outDir ?: "publish"
+
+    String outDir = config?.source_build?.outDir ?: "publish"
     String dateFormat = config?.dateFormat ?: "'%Y-%m-%d %H:%M'"
-     switch (stepContext.name) {
+    switch (stepContext.name) {
+
         case "prepare_tools":
             stepName = "DotNet Prepare"
             break
@@ -23,13 +27,16 @@ void call() { //(Map args = [:],body){
             break
         default:
             error("step name must be \"source_build\", \"prepare_tools\", \"deploy_application\", \"troubleshoot_pipeline\" or \"unit_test\" got \"${stepContext.name}\"")
-     }
+feature/add-extra
+    }
+
     stage(stepName) {
         try {
             if (stepName == "DotNet Prepare") {
                     script {
                         //TODO: Remove these bitbucket status calls, it should be handled by webhooks
-                        bitbucketStatusNotify(buildState: 'INPROGRESS') 
+
+                        bitbucketStatusNotify(buildState: 'INPROGRESS')
                         echo "${stepName}"
                         if (env.runStart == null) {
                             env.runStart = sh(returnStdout:true, script: "date +${dateFormat}").trim()
@@ -71,7 +78,7 @@ void call() { //(Map args = [:],body){
                                 set -e +o pipefail
                                 _tmp=\$(pwd)
                                 dotnet build
-                               
+
                                 cd \$_tmp
                                 """)
                         //dotcover vsTestCaseFilter: '*tests*'
@@ -123,7 +130,7 @@ void call() { //(Map args = [:],body){
                                 #dotnet gitversion /showvariable FullSemVer
                                 echo \"IN some method\"
                                 """)
-                                
+
                                 //def props = readProperties file: 'gitversion.properties'
                             //env.GitVersion_SemVer = props.GitVersion_SemVer
                               //  echo "${env.GitVersion_SemVer}"
