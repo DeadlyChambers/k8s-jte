@@ -1,0 +1,32 @@
+site_name: JTE Library Starter
+
+theme:
+  name: material
+  palette:
+    primary: teal
+  features: 
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+
+repo_url: https://github.com/steven-terrana/jte-library-scaffold
+
+watch:
+- libraries
+
+plugins:
+  - search:
+  - gen-files:
+      scripts:
+        - /docs/resources/copy_docs.py
+
+extra:
+  version:
+    provider: mike
+    default: latest
+
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed
+  - pymdownx.highlight
