@@ -3,10 +3,9 @@ void call() {
     // Specific Step Variables
     String stepName = ''
     String masterBranch = config?.master_branch ?: 'main'
-    podTemplate(containers: [
-    containerTemplate(name: 'dotnet', image: 'mcr.microsoft.com/dotnet/sdk:6.0', ttyEnabled: true, command: 'cat'),
-  ]) {
-        node(POD_LABEL) {
+    
+    container('dotnet') {
+        
             stage(stepName) {
                 try {
                     if (env.BRANCH_NAME == "${masterBranch}" || env.TAG_NAME) {
@@ -46,8 +45,8 @@ void call() {
                     //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
                     //   buildDescription(any.getMessage())
                     throw any
-        }
-            }
+        
         }
     }
+}
 }

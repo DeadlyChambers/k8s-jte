@@ -71,3 +71,6 @@ docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
 
 [Check it out](https://github.com/ExpediaGroup/jenkins-spock/tree/master/examples/shared-library)
 
+### Build without Gradle
+
+Using the Dockerfile build.Dockerfile you can crate a pacakge

@@ -1,13 +1,10 @@
 /* groovylint-disable CatchException, LineLength */
 void call() {
     // Specific Step Variables
-    String  stepName = 'DotNet Unit Test'
+    String  stepName = 
     String masterBranch = config?.master_branch ?: 'main'
-     podTemplate(containers: [
-    containerTemplate(name: 'dotnet', image: 'mcr.microsoft.com/dotnet/sdk:6.0', ttyEnabled: true, command: 'cat'),
-  ]) {
-        node(POD_LABEL) {
-    stage(stepName) {
+        container('dotnet') {
+    stage('Test') {
         try {
             if (env.BRANCH_NAME != "${masterBranch}" && env.TAG_NAME == null) {
                 echo "${stepName}"
@@ -50,4 +47,4 @@ void call() {
             throw any
         }
     }}}
-}
+

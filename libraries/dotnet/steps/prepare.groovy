@@ -4,10 +4,7 @@ void call() {
     String stepName = 'DotNet Prepare'
     String appName = config?.appName ?: 'threes'
     String dateFormat = config?.dateFormat ?: "'%Y-%m-%d %H:%M'"
-      podTemplate(containers: [
-    containerTemplate(name: 'dotnet', image: 'mcr.microsoft.com/dotnet/sdk:6.0', ttyEnabled: true, command: 'cat'),
-  ]) {
-        node(POD_LABEL) {
+      container('default') {
     stage(stepName) {
         try {
             script {
@@ -57,4 +54,4 @@ void call() {
             throw any
         }
     }}}
-}
+
