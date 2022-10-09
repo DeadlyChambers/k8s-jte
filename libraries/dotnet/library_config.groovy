@@ -1,6 +1,9 @@
+/* groovylint-disable NglParseError */
+@compiledynamic
 fields {
+
     required {
-        
+
     }
     optional {
         appName = String
