@@ -27,7 +27,7 @@ void call() { //(Map args = [:],body){
             break
         default:
             error("step name must be \"source_build\", \"prepare_tools\", \"deploy_application\", \"troubleshoot_pipeline\" or \"unit_test\" got \"${stepContext.name}\"")
-feature/add-extra
+
     }
 
     stage(stepName) {
@@ -35,7 +35,7 @@ feature/add-extra
             if (stepName == "DotNet Prepare") {
                     script {
                         //TODO: Remove these bitbucket status calls, it should be handled by webhooks
-
+                        checkout scm
                         bitbucketStatusNotify(buildState: 'INPROGRESS')
                         echo "${stepName}"
                         if (env.runStart == null) {
