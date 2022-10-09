@@ -4,8 +4,7 @@
 
 // public class BuildSpec extends JenkinsPipelineSpecification{
 
-//   def build 
-
+//   def build
 //   def setup() {
 //     build = loadPipelineScriptForTest("dotnet/steps/dotnet_invoke.groovy")
 //   }
@@ -18,5 +17,4 @@
 //     then:
 //       1 * getPipelineMock("sh")("echo 'build step from maven'")
 //   }
-
 // }
