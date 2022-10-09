@@ -11,3 +11,14 @@ spec:
             defaultContainer 'dotnet'
         }
     }
+
+    podTemplate(cloud:"kubernetes", label:"default"){
+    node("default"){
+        container("dotnet"){
+            prepare()
+            build()
+            test()
+            deploy()
+        }
+    }
+}
