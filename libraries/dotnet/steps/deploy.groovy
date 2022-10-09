@@ -3,12 +3,15 @@ void call() {
     // Specific Step Variables
     String stepName = ''
     String masterBranch = config?.master_branch ?: 'main'
-
-    stage(stepName) {
-        try {
-            if (env.BRANCH_NAME == "${masterBranch}" || env.TAG_NAME) {
-                echo 'Doing the deploy step'
-                sh(script:"""
+    podTemplate(containers: [
+    containerTemplate(name: 'dotnet', image: 'mcr.microsoft.com/dotnet/sdk:6.0', ttyEnabled: true, command: 'cat'),
+  ]) {
+        node(POD_LABEL) {
+            stage(stepName) {
+                try {
+                    if (env.BRANCH_NAME == "${masterBranch}" || env.TAG_NAME) {
+                        echo 'Doing the deploy step'
+                        sh(script:"""
                         echo 'DELETE: output vars before deploy'
                         printenv
                         """)
@@ -28,21 +31,23 @@ void call() {
                     //             echo 'aws elasticbeanstalk update-environment --application-name "\${_elbAppName}" --environment-name "\${_elbEnv}" --version-label "${env.elbVersionLabel}" --debug;'
                     //             echo 'aws elasticbeanstalk wait environment-updated --application-name "\${_elbAppName}" --environment-names "\${_elbEnv}" --version-label "${env.elbVersionLabel}" --debug;'
 
-                //         """, label: "ElasticBeanstalk Deploy")
-                // }
-                bitbucketStatusNotify(buildState: 'SUCCESSFUL')
-                env.elbVersionLabel = '6.1.21'
-                env.appEnviron = 'local'
-                buildName "${env.appEnviron}:${env.elbVersionLabel}.${env.BUILD_ID}"
-                buildDescription("App Label : ${env.elbVersionLabel}\nCommit : ${env.GIT_COMMIT}\nEnvironment : ${env.appEnviron}\n")
-            //slackSend color: "good", channel: "${slackChannel}", message: "${env.buildDesc}\n S3Url : https://${elbS3Bucket}.s3.amazonaws.com/${appName}/${env.elbVersionLabel}.zip", timestamp: "${env.runStart}"
-            }
-        }
+                        //         """, label: "ElasticBeanstalk Deploy")
+                        // }
+                        bitbucketStatusNotify(buildState: 'SUCCESSFUL')
+                        env.elbVersionLabel = '6.1.21'
+                        env.appEnviron = 'local'
+                        buildName "${env.appEnviron}:${env.elbVersionLabel}.${env.BUILD_ID}"
+                        buildDescription("App Label : ${env.elbVersionLabel}\nCommit : ${env.GIT_COMMIT}\nEnvironment : ${env.appEnviron}\n")
+                    //slackSend color: "good", channel: "${slackChannel}", message: "${env.buildDesc}\n S3Url : https://${elbS3Bucket}.s3.amazonaws.com/${appName}/${env.elbVersionLabel}.zip", timestamp: "${env.runStart}"
+                    }
+                }
         catch (Exception any) {
-            bitbucketStatusNotify(buildState: 'FAILED')
-            //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
-            //   buildDescription(any.getMessage())
-            throw any
+                    bitbucketStatusNotify(buildState: 'FAILED')
+                    //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
+                    //   buildDescription(any.getMessage())
+                    throw any
+        }
+            }
         }
     }
 }
