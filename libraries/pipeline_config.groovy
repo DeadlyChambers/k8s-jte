@@ -1,8 +1,8 @@
 jte {
-    allow_scm_jenkinsfile = True
-    permissive_initialization = True
+    allow_scm_jenkinsfile = true
+    permissive_initialization = true
     //pipeline_template = 'my-named-template.groovy'
-    reverse_library_resolution = True
+    reverse_library_resolution = true
 }
 template_methods {
     prepare
