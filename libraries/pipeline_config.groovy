@@ -11,7 +11,6 @@ template_methods {
     deploy
 }
 libraries {
-    dotnet {
-
-    }
+    dotnet
+    maven
 }
