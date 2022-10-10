@@ -1,0 +1,360 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          description: "SSH Key for Jenkins"
+          id: "jenkins_ssh_key"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "jenkins"
+      - usernamePassword:
+          description: "Bitbucket Oauth Token username password"
+          id: "bitbucket_oauth"
+          password: "{AQAAABAAAAAwfenNVTVQKYOnK8CaZv3DvSU/Z/FiuqksNDjlR85ZJ/lFJCM+EQq5FCOGKDiOKKz9rtusxDMHk8SU7030XYS2sw==}"
+          scope: GLOBAL
+          username: "wwB6YMVYmzc3WmxtZY"
+      - basicSSHUserPrivateKey:
+          description: "Bitbucket Jenkins SSH Key"
+          id: "bitbucket_ssh_key"
+          privateKeySource:
+            directEntry:
+              privateKey: "{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}"
+          scope: GLOBAL
+          username: "jenkins"
+      - fileSystemServiceAccountCredential:
+          id: "8cf4687e-ea32-4e73-bf6e-1869c4442b9b"
+          scope: GLOBAL
+      - aws:
+          accessKey: "AKIAXKO7VHXUJUXIRQFM"
+          description: "Terraform User should have pretty wide privs"
+          id: "terraform-user"
+          scope: GLOBAL
+          secretKey: "{AQAAABAAAAAwbJQM5gThayKgel07EsaD00Ra+TpPtxUmg1tB0Ds76IRQn/vDNCOreSZKPZzkDkjHy//b9CT5234X3JCNBbya3w==}"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  clouds:
+  - kubernetes:
+      addMasterProxyEnvVars: true
+      connectTimeout: 10
+      containerCap: 10
+      containerCapStr: "10"
+      directConnection: true
+      name: "kubernetes"
+      namespace: "jenkins"
+      podLabels:
+      - key: "jenkins/jenkins-jenkins-agent"
+        value: "true"
+      - key: "jenkins-agent"
+        value: "true"
+      - key: "agent"
+        value: "dotnet"
+      podRetention: "always"
+      retentionTimeout: 10
+      serverUrl: "https://kubernetes.default"
+      skipTlsVerify: true
+      templates:
+      - activeDeadlineSeconds: 597
+        activeDeadlineSecondsStr: "597"
+        annotations:
+        - key: "imageregistry"
+          value: "dotnet-jenkins"
+        - key: "ds.app"
+          value: "jenkins"
+        - key: "ds.env"
+          value: "operations"
+        - key: "ds.service"
+          value: "eks"
+        containers:
+        - args: "99999"
+          command: "sleep"
+          envVars:
+          - envVar:
+              key: "JENKINS_URL"
+              value: "http://jenkins.k2so:8080/"
+          image: "docker.io/library/dotnet-jenkins-agent:local"
+          livenessProbe:
+            failureThreshold: 2
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: "dotnet"
+          ttyEnabled: true
+          workingDir: "/home/jenkins/agent"
+        hostNetwork: true
+        id: "b992262104ecf638fdeb71a4c2f95c18dea152185a8ec7f762a58a60b67f3e8e"
+        idleMinutes: 5
+        idleMinutesStr: "5"
+        instanceCap: 8
+        instanceCapStr: "8"
+        label: "jenkins-jenkins-agent, dotnet6"
+        name: "dotnet"
+        namespace: "jenkins"
+        nodeUsageMode: "NORMAL"
+        serviceAccount: "jenkins"
+        slaveConnectTimeout: 600
+        slaveConnectTimeoutStr: "600"
+        volumes:
+        - emptyDirVolume:
+            memory: true
+            mountPath: "/var/lib/jenkins"
+        - hostPathVolume:
+            hostPath: "/var/run/docker.sock"
+            mountPath: "/var/run/docker.sock"
+        workspaceVolume:
+          emptyDirWorkspaceVolume:
+            memory: true
+        yamlMergeStrategy: "override"
+      useJenkinsProxy: true
+      waitForPodSec: 159
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  labelAtoms:
+  - name: "built-in"
+  - name: "dotnet6"
+  - name: "jenkins-jenkins-agent,"
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  mode: EXCLUSIVE
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "Jenkins Admin"
+        properties:
+        - "apiToken"
+        - mailer:
+            emailAddress: "shanechambers85@gmail.com"
+        - preferredProvider:
+            providerId: "default"
+        - timezone:
+            timeZoneName: "America/Denver"
+        - "theme"
+        - "favorite"
+      - id: "shane"
+        name: "Shane"
+        properties:
+        - "apiToken"
+        - theme:
+            theme: "material-light-blue"
+        - mailer:
+            emailAddress: "shanechambers85@gmail.com"
+        - "favorite"
+        - preferredProvider:
+            providerId: "default"
+        - timezone:
+            timeZoneName: "America/Denver"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  envInject:
+    enableLoadingFromMaster: false
+    enablePermissions: false
+    hideInjectedVars: false
+  gitHooks:
+    allowedOnAgents: true
+    allowedOnController: true
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "acceptFirstConnectionStrategy"
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: true
+  sSHD:
+    port: 0
+  updateSiteWarningsConfiguration:
+    ignoredWarnings:
+    - "SECURITY-569"
+    - "SECURITY-879"
+unclassified:
+  audit-trail:
+    logBuildCause: true
+    logCredentialsUsage: true
+    loggers:
+    - console:
+        dateFormat: "yyyy-MM-dd HH:mm:ss:SSS"
+        output: STD_OUT
+    pattern: ".*/(?:configSubmit|doDelete|postBuildResult|enable|disable|cancelQueue|stop|toggleLogKeep|doWipeOutWorkspace|createItem|createView|toggleOffline|cancelQuietDown|quietDown|restart|exit|safeExit)/?.*"
+  badgePlugin:
+    disableFormatHTML: false
+  bitbucketBuildStatusNotifier:
+    globalCredentialsId: "bitbucket_oauth"
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: true
+        manageHooks: false
+        repositoriesCacheDuration: 10
+        teamCacheDuration: 10
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStatusConfig:
+    dbVersion: 2
+    enableGithub: false
+    enableHttp: false
+    enableInfluxDb: false
+    enableStatsd: false
+    httpVerifySSL: false
+    ignoreSendingTestCoverageToInflux: false
+    ignoreSendingTestResultsToInflux: true
+    statsdMaxSize: "1400"
+    statsdPort: "8125"
+  buildStepOperation:
+    enabled: false
+  buildUserVars:
+    allBuilds: true
+  dockerSettings:
+    cloudOrder: "asIs"
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  ghprbTrigger:
+    autoCloseFailedPullRequests: false
+    cron: "H/5 * * * *"
+    extensions:
+    - ghprbSimpleStatus:
+        addTestResults: false
+        showMatrixStatus: false
+    githubAuth:
+    - credentialsId: "bitbucket_oauth"
+      description: "Anonymous connection"
+      id: "b748ffde-8d49-42ff-be88-06420129f6a1"
+      secret: "{AQAAABAAAAAQYzD6qArCWdHv+UXClsdxuaQR/9niuXd2Zwb/CDa6sew=}"
+      serverAPIUrl: "https://api.github.com"
+    manageWebhooks: false
+    okToTestPhrase: ".*ok\\W+to\\W+test.*"
+    requestForTestingPhrase: "Can one of the admins verify this patch?"
+    retestPhrase: ".*test\\W+this\\W+please.*"
+    skipBuildPhrase: ".*\\[skip\\W+ci\\].*"
+    useComments: false
+    useDetailedComments: false
+    whitelistPhrase: ".*add\\W+to\\W+whitelist.*"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://jenkins.k2so:8080/github-webhook/"
+  gitSCM:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    globalConfigEmail: "shanechambers85@gmail.com"
+    globalConfigName: "DeadlyChambers"
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  githubPullRequests:
+    actualiseOnFactory: false
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  jobConfigHistory:
+    excludePattern: "queue\\.xml|nodeMonitors\\.xml|UpdateCenter\\.xml|global-build-stats|LockableResourcesManager\\\
+      .xml|MilestoneStep\\.xml|cloudbees-disk-usage-simple\\.xml"
+    saveModuleConfiguration: false
+    showBuildBadges: "always"
+    showChangeReasonCommentWindow: true
+    skipDuplicateHistory: true
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "shanechambers85@gmail.com"
+    url: "http://jenkins.k2so:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  pluginImpl:
+    enableCredentialsFromNode: false
+  pollSCM:
+    pollingThreadCount: 10
+  prismConfiguration:
+    theme: PRISM
+  sCMSkipBuildWrapper:
+    skipPattern: ".*\\[ci skip\\].*"
+  subversionSCM:
+    workspaceFormat: 8
+  tagConfigure:
+    caseSenstive: false
+    disableColor: false
+  templateGlobalConfig:
+    tier:
+      configurationProvider:
+        scm:
+          baseDir: "libraries"
+          scm:
+            git:
+              branches:
+              - name: "main"
+              buildChooser: "default"
+              userRemoteConfigs:
+              - url: "https://github.com/DeadlyChambers/k8s-jte.git"
+  themeManager:
+    disableUserThemes: false
+    theme: "material-light-blue"
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+  warningsParsers:
+    consoleLogScanningPermitted: false
+  whitelist:
+    enabled: false
+tool:
+  cmakeTool:
+    installations:
+    - name: "InSearchPath"
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
+  pipelineMaven:
+    triggerDownstreamUponResultAborted: false
+    triggerDownstreamUponResultFailure: false
+    triggerDownstreamUponResultNotBuilt: false
+    triggerDownstreamUponResultSuccess: true
+    triggerDownstreamUponResultUnstable: false
