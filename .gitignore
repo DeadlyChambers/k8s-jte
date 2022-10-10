@@ -12,3 +12,5 @@ target/
 
 # Local Netlify folder
 .netlify
+secrets.txt
+*.tar

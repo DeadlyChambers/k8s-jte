@@ -1,10 +1,13 @@
 /* groovylint-disable CatchException, LineLength */
 void call() {
     // Specific Step Variables
-    String stepName = 'Prepare'
+    String stepName = 'DotNet Prepare'
     String appName = config?.appName ?: 'threes'
     String dateFormat = config?.dateFormat ?: "'%Y-%m-%d %H:%M'"
-      container('jlnp') {
+      podTemplate(containers: [
+    containerTemplate(name: 'dotnet', image: 'mcr.microsoft.com/dotnet/sdk:6.0', ttyEnabled: true, command: 'cat'),
+  ]) {
+        node(POD_LABEL) {
     stage(stepName) {
         try {
             script {
@@ -54,4 +57,4 @@ void call() {
             throw any
         }
     }}}
-
+}

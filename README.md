@@ -74,3 +74,62 @@ docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material build
 ### Build without Gradle
 
 Using the Dockerfile build.Dockerfile you can crate a pacakge
+
+### Cleaning up Jenkins
+
+I ran nodes, and ended up getting a buhjillion containers created. Using this script I was able to 
+clear out the failed nodes from the Jenkins namespace
+
+```shell
+mkctl get pods -n jenkins | grep Error | awk '{print "kubectl delete pod " $1 " -n jenkins"}' > cleanup.sh
+chmod +x cleanup.sh
+./cleanup.sh
+```
+
+Get the token
+
+```shell
+
+kubectl get secret $(kubectl get sa jenkins -n jenkins -o jsonpath={.secrets[0].name}) -n jenkins -o jsonpath={.data.token} | base64 --decode
+
+```
+
+## Dotnet Agent
+
+Setup an image that has the agent, and dotnet running, push it to ECR and setup the cloud to utilize it
+
+```shell
+export DOCKER_BUILDKIT=1
+cd resources/dotnet
+docker build --target dotnet-6 -t dotnet-jenkins-agent -f dotnet.agent.Dockerfile .
+docker tag dotnet-jenkins-agent:local 503517101544.dkr.ecr.us-east-1.amazonaws.com/soinshane-jenkins:latest
+docker push 503517101544.dkr.ecr.us-east-1.amazonaws.com/soinshane-jenkins:latest
+
+```
+
+You can save it [locally for microk8s](https://microk8s.io/docs/registry-images)
+
+```shell
+export DOCKER_BUILDKIT=1
+cd resources/dotnet
+docker build --target dotnet-6 -t dotnet-jenkins-agent -f dotnet.agent.Dockerfile .
+docker tag dotnet-jenkins-agent dotnet-jenkins-agent:local
+docker save dotnet-jenkins-agent:local > dotnet-jenkins-agent.tar
+microk8s ctr image import dotnet-jenkins-agent.tar
+microk8s ctr image ls -q | grep jenkins
+```
+
+
+Install for AWS
+- aws-iam-authenticator for k8s
+- eksctl
+- aws-auth
+
+Those three should get you setup. Then
+
+```shell
+eksctl create iamidentitymapping --help
+eksctl create iamidentitymapping --cluster microk8s --region=us-east-1 --arn arn:aws:iam::123456:role/testing --group system:masters --username jenkins
+
+    
+```
