@@ -96,7 +96,7 @@ kubectl get secret $(kubectl get sa jenkins -n jenkins -o jsonpath={.secrets[0].
 
 ## Dotnet Agent
 
-Setup an image that has the agent, and dotnet running, push it to ECR and setup the cloud to utilize it
+Setup an image that has the agent, and dotnet running, push it to ECR and setup the cloud to utilize it. Use this in conjuction with [git repo](https://bitbucket.org/DeadlyChambers85/api/pull-requests/1?t=1)
 
 ```shell
 export DOCKER_BUILDKIT=1
