@@ -1,10 +1,10 @@
 /* groovylint-disable CatchException, LineLength */
 void call() {
     // Specific Step Variables
-    String stepName = 'DotNet Prepare'
+    String stepName = 'Prepare'
     String appName = config?.appName ?: 'threes'
     String dateFormat = config?.dateFormat ?: "'%Y-%m-%d %H:%M'"
-      container('default') {
+      container('jlnp') {
     stage(stepName) {
         try {
             script {

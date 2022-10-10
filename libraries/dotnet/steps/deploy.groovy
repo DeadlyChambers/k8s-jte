@@ -1,11 +1,9 @@
 /* groovylint-disable CatchException, LineLength */
 void call() {
     // Specific Step Variables
-    String stepName = ''
+    String stepName = 'Deploy'
     String masterBranch = config?.master_branch ?: 'main'
-    
     container('dotnet') {
-        
             stage(stepName) {
                 try {
                     if (env.BRANCH_NAME == "${masterBranch}" || env.TAG_NAME) {
