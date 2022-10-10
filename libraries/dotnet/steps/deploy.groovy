@@ -30,7 +30,7 @@ void call() {
 
                         //         """, label: "ElasticBeanstalk Deploy")
                         // }
-                        bitbucketStatusNotify(buildState: 'SUCCESSFUL')
+                        //bitbucketStatusNotify(buildState: 'SUCCESSFUL')
                         env.elbVersionLabel = '6.1.21'
                         env.appEnviron = 'local'
                         buildName "${env.appEnviron}:${env.elbVersionLabel}.${env.BUILD_ID}"
@@ -39,7 +39,7 @@ void call() {
                     }
                 }
         catch (Exception any) {
-                    bitbucketStatusNotify(buildState: 'FAILED')
+                    //bitbucketStatusNotify(buildState: 'FAILED')
                     //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
                     //   buildDescription(any.getMessage())
                     throw any

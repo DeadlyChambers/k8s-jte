@@ -12,7 +12,7 @@ void call() {
         try {
             script {
                 checkout scm
-                bitbucketStatusNotify(buildState: 'INPROGRESS')
+                //bitbucketStatusNotify(buildState: 'INPROGRESS')
                 echo "${stepName}"
                 if (env.runStart == null) {
                     env.runStart = sh(returnStdout:true, script: "date +${dateFormat}").trim()
@@ -49,7 +49,7 @@ void call() {
                 """)
         }
         catch (Exception any) {
-            bitbucketStatusNotify(buildState: 'FAILED')
+            //bitbucketStatusNotify(buildState: 'FAILED')
             //   slackSend color: "danger", channel: "${slackChannel}",
             //   message: "Failed at Stage : ${stepName}\n ${env.buildDesc}",
             //   timestamp: "${env.runStart}"

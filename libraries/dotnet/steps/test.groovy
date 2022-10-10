@@ -37,11 +37,11 @@ void call() {
                                 """, label: 'Dotnet Test Coverage')
                 //archiveArtifacts artifacts: "${dotnetDir}/${resultsDir}/**/*.*, ", onlyIfSuccessful: true
                 }
-                bitbucketStatusNotify(buildState: 'SUCCESSFUL')
+                //bitbucketStatusNotify(buildState: 'SUCCESSFUL')
             }
         }
         catch (Exception any) {
-            bitbucketStatusNotify(buildState: 'FAILED')
+            //bitbucketStatusNotify(buildState: 'FAILED')
             //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
             //   buildDescription(any.getMessage())
             throw any

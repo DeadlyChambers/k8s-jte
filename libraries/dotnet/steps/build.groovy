@@ -88,7 +88,7 @@ void call() {
                     }
                 }
             catch (Exception any) {
-                    bitbucketStatusNotify(buildState: 'FAILED')
+                    //bitbucketStatusNotify(buildState: 'FAILED')
                     //   slackSend color: "danger", channel: "${slackChannel}", message: "Failed at Stage : ${stepName}\n ${env.buildDesc}", timestamp: "${env.runStart}"
                     //   buildDescription(any.getMessage())
                     throw any
