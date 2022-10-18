@@ -1,5 +1,5 @@
 void call() {
-    container('jnlp') {
+    container('no-priv') {
         stage("Tik") {
             echo "Running Step Tik"
         }

@@ -1,6 +1,6 @@
 /* groovylint-disable UnnecessaryGString */
 void call() {
-    container('jnlp') {
+    container('no-priv') {
         stage('Tok') {
             echo 'Running Step Tok'
             sh(script:
