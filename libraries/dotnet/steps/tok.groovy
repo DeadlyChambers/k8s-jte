@@ -6,7 +6,7 @@ void call() {
             sh(script:
             """#!/bin/bash
                set -e +o pipefail
-               docker info""")
+               podman info""")
         }
     }
 }
